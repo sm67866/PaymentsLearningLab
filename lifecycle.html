@@ -72,41 +72,52 @@
 </section>
 
 <section class="content-panel">
-    <h2>Clearing</h2>
+    <h2>Batch</h2>
     <p>
-        After authorization, approved transactions are submitted for clearing, often in daily batches.
-        This is where finalized transaction details are exchanged and the payment promise is reconciled.
+        Approved transactions are grouped together in a batch. Some systems close batches automatically
+        at the end of the day, while others require the merchant to close the batch manually.
     </p>
+
+    <div class="callout">
+        <strong>Support Tip:</strong> If the batch has not closed, funding may be delayed.
+    </div>
 </section>
 
-<section class="module-grid">
+<section class="content-panel">
+    <h2>Clearing</h2>
+    <p>
+        Clearing is when finalized transaction details are exchanged between the processor, card network,
+        and issuing bank. This step reconciles the payment promise made during authorization.
+    </p>
 
-    <div class="card">
-        <div class="card-icon">🏦</div>
-
-        <h3>Settlement</h3>
-
-        <p>
-            Settlement is when money actually moves between the issuing bank,
-            card network, processor, and acquiring bank. Financial institutions
-            reconcile the transaction and exchange funds.
-        </p>
-
+    <div class="callout">
+        <strong>Think of it this way:</strong> Clearing confirms what happened before funds move.
     </div>
+</section>
 
-    <div class="card">
-        <div class="card-icon">💰</div>
+<section class="content-panel">
+    <h2>Settlement</h2>
+    <p>
+        Settlement is when funds move between financial institutions. The issuing bank, card network,
+        processor, and acquiring bank reconcile the transaction and exchange funds.
+    </p>
 
-        <h3>Funding</h3>
-
-        <p>
-            Funding is when the merchant finally receives the deposit into their
-            bank account. This typically occurs 1–2 business days after the
-            transaction depending on processor schedules and holidays.
-        </p>
-
+    <div class="callout">
+        <strong>Remember:</strong> Settlement is bank-to-bank. The merchant may still be waiting for funding.
     </div>
+</section>
 
+<section class="content-panel">
+    <h2>Funding</h2>
+    <p>
+        Funding is when the merchant receives the deposit into their bank account. This usually happens
+        1–2 business days after the transaction, depending on batch timing, weekends, holidays,
+        processor schedules, and account holds.
+    </p>
+
+    <div class="callout">
+        <strong>Remember:</strong> Funding is the finish line for the merchant.
+    </div>
 </section>
 
 <section class="feature-panel">

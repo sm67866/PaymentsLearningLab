@@ -95,3 +95,24 @@ footer {
     background: #17375e;
     color: white;
 }
+
+.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.back-link {
+    display: inline-block;
+    color: #f4d35e;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.page-header {
+    text-align: left;
+}

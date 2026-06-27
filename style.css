@@ -61,6 +61,10 @@ h2 {
 }
 
 .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    
     background: white;
     padding: 26px;
     border-radius: 18px;

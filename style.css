@@ -341,3 +341,10 @@ section {
     }
 }
 
+.module-grid .card {
+    min-height: 250px;
+}
+
+.card-icon {
+    flex-shrink: 0;
+}

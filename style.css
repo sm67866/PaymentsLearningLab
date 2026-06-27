@@ -339,12 +339,15 @@ section {
         grid-template-columns: 1fr;
         padding-top: 40px;
     }
-}
-
-.module-grid .card {
-    min-height: 250px;
-}
 
 .card-icon {
     flex-shrink: 0;
+}
+
+/* Payment 101 player cards */
+.lesson-card-grid .card {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

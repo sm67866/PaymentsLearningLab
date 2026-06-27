@@ -351,3 +351,23 @@ section {
     flex-direction: column;
     justify-content: flex-start;
 }
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.player-grid .card {
+    height: 220px;
+    box-shadow: 0 12px 30px rgba(8, 43, 87, 0.08);
+}
+
+.player-grid .card p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 850px) {
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+}

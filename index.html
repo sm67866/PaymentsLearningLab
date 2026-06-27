@@ -1,112 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Payments Learning Lab</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">💳</span>
+        Payments Learning Lab
+    </a>
 
-    <h1>Payments Learning Lab</h1>
+    <div class="nav-links">
+        <a href="#modules">Modules</a>
+        <a href="#">Diagnostics</a>
+        <a href="#">Glossary</a>
+        <a href="#">About</a>
+    </div>
+</nav>
 
-    <p class="subtitle">
-        Learn how modern payment processing works—from onboarding to funding,
-        troubleshooting, PCI compliance, and merchant success.
-    </p>
+<header class="home-hero">
+    <div class="hero-text">
+        <p class="eyebrow">Merchant Services Training</p>
+        <h1>Understand payment processing from authorization to funding.</h1>
+        <p>
+            A practical learning platform for onboarding, support, and merchant success teams.
+        </p>
+        <a href="#modules" class="primary-button">Start Learning</a>
+    </div>
 
+    <div class="hero-visual">
+        <div class="visual-card">💳</div>
+        <span>→</span>
+        <div class="visual-card">📟</div>
+        <span>→</span>
+        <div class="visual-card">🏦</div>
+    </div>
 </header>
 
 <main>
 
-<section class="hero">
+<section id="modules">
+    <div class="section-heading">
+        <p class="eyebrow">Training Modules</p>
+        <h2>Choose a learning path</h2>
+    </div>
 
-    <h2>Welcome</h2>
+    <div class="module-grid">
 
-    <p>
-        Whether you're new to merchant services or brushing up on technical
-        knowledge, this learning platform is designed to explain payment
-        processing in a practical, easy-to-understand way.
-    </p>
+        <a href="payment101.html" class="card">
+            <div class="card-icon">💳</div>
+            <h3>Payment Processing 101</h3>
+            <p>Understand the fundamentals of how card payments work.</p>
+            <span class="card-link">Begin Module →</span>
+        </a>
 
+        <a href="lifecycle.html" class="card">
+            <div class="card-icon">🔄</div>
+            <h3>Transaction Lifecycle</h3>
+            <p>Authorization, batching, clearing, funding, and settlement.</p>
+            <span class="card-link">Begin Module →</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-icon">❌</div>
+            <h3>Common Decline Codes</h3>
+            <p>Learn why transactions fail and how to respond.</p>
+            <span class="card-link">Coming Soon</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-icon">🖥️</div>
+            <h3>Terminal Troubleshooting</h3>
+            <p>Connectivity, EMV, printers, peripherals, and more.</p>
+            <span class="card-link">Coming Soon</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>PCI Compliance</h3>
+            <p>Protect merchants and understand payment security.</p>
+            <span class="card-link">Coming Soon</span>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-icon">📈</div>
+            <h3>Merchant Health</h3>
+            <p>Retention, funding issues, support trends, and success.</p>
+            <span class="card-link">Coming Soon</span>
+        </a>
+
+    </div>
 </section>
 
-<section>
-
-<h2>Learning Modules</h2>
-
-<div class="module-grid">
-
-<a href="payment101.html" class="card">
-    <h3>💳 Payment Processing 101</h3>
-    <p>Understand the fundamentals of how card payments work.</p>
-</a>
-
-<div class="card">
-<h3>🔄 Transaction Lifecycle</h3>
-<p>Authorization, batching, clearing, funding, and settlement.</p>
-</div>
-
-<div class="card">
-<h3>❌ Common Decline Codes</h3>
-<p>Learn why transactions fail and how to respond.</p>
-</div>
-
-<div class="card">
-<h3>🖥 Terminal Troubleshooting</h3>
-<p>Connectivity, EMV, printers, peripherals, and more.</p>
-</div>
-
-<div class="card">
-<h3>🛡 PCI Compliance</h3>
-<p>Protect merchants and understand payment security.</p>
-</div>
-
-<div class="card">
-<h3>📈 Merchant Health</h3>
-<p>Retention, funding issues, support trends, and success.</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Merchant Diagnostic (Coming Soon)</h2>
-
-<div class="diagnostic">
-
-<p>
-Choose a merchant issue and learn the most common causes,
-questions to ask, and troubleshooting steps.
-</p>
-
-<button>Coming Soon</button>
-
-</div>
-
+<section class="feature-panel">
+    <div>
+        <p class="eyebrow">Coming Soon</p>
+        <h2>Merchant Diagnostic Tool</h2>
+        <p>
+            Select a merchant issue and review possible causes, first questions to ask,
+            and escalation steps.
+        </p>
+    </div>
+    <a href="#" class="secondary-button">Preview Tool</a>
 </section>
 
 </main>
 
-<script src="script.js"></script>
-
-</body>
-    <footer>
-    <p>
-        © 2026 Samantha Middleton. All rights reserved.
-    </p>
+<footer>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
 </footer>
 
+</body>
 </html>

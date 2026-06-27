@@ -9,15 +9,41 @@
 
 <body>
 
-<header class="page-header">
-    <a href="index.html" class="back-link">← Back to Dashboard</a>
-    <h1>Payment Processing 101</h1>
-    <p class="subtitle">A beginner-friendly overview of how card payments move from swipe, dip, or tap to merchant funding.</p>
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">💳</span>
+        Payments Learning Lab
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html#modules">Modules</a>
+        <a href="#">Diagnostics</a>
+        <a href="#">Glossary</a>
+        <a href="#">About</a>
+    </div>
+</nav>
+
+<header class="lesson-hero">
+    <div>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+        <p class="eyebrow">Module 01</p>
+        <h1>Payment Processing 101</h1>
+        <p>
+            A beginner-friendly overview of how card payments move from swipe,
+            dip, or tap to merchant funding.
+        </p>
+    </div>
+
+    <div class="hero-visual small-visual">
+        <div class="visual-card">💳</div>
+        <span>→</span>
+        <div class="visual-card">🏦</div>
+    </div>
 </header>
 
 <main>
 
-<section class="hero">
+<section class="content-panel">
     <h2>What is payment processing?</h2>
     <p>
         Payment processing is the system that allows a merchant to accept card payments from customers.
@@ -27,44 +53,53 @@
 </section>
 
 <section>
-    <h2>The Main Players</h2>
+    <div class="section-heading">
+        <p class="eyebrow">Key Concepts</p>
+        <h2>The Main Players</h2>
+    </div>
 
     <div class="module-grid">
         <div class="card">
+            <div class="card-icon">👤</div>
             <h3>Customer</h3>
             <p>The person paying with a credit or debit card.</p>
         </div>
 
         <div class="card">
+            <div class="card-icon">🏪</div>
             <h3>Merchant</h3>
             <p>The business accepting the payment.</p>
         </div>
 
         <div class="card">
+            <div class="card-icon">📟</div>
             <h3>Payment Terminal</h3>
             <p>The device or software used to collect card information.</p>
         </div>
 
         <div class="card">
+            <div class="card-icon">⚙️</div>
             <h3>Processor</h3>
             <p>The company that routes transaction data between banks and card networks.</p>
         </div>
 
         <div class="card">
+            <div class="card-icon">🔗</div>
             <h3>Card Network</h3>
             <p>Visa, Mastercard, Discover, or American Express.</p>
         </div>
 
         <div class="card">
+            <div class="card-icon">🏦</div>
             <h3>Issuing Bank</h3>
             <p>The customer’s bank that approves or declines the transaction.</p>
         </div>
     </div>
 </section>
 
-<section class="diagnostic">
+<section class="content-panel">
     <h2>Simple Transaction Flow</h2>
-    <ol>
+    <ol class="lesson-list">
         <li>Customer presents a card.</li>
         <li>The terminal captures and encrypts the payment data.</li>
         <li>The processor routes the transaction request.</li>
@@ -75,20 +110,22 @@
     </ol>
 </section>
 
-<section class="hero">
-    <h2>Why this matters</h2>
-    <p>
-        Support teams need to understand the payment flow so they can troubleshoot issues like declines,
-        batch problems, funding delays, terminal errors, and merchant confusion.
-    </p>
+<section class="feature-panel">
+    <div>
+        <p class="eyebrow">Support Tip</p>
+        <h2>Why this matters</h2>
+        <p>
+            Support teams need to understand the payment flow so they can troubleshoot issues like declines,
+            batch problems, funding delays, terminal errors, and merchant confusion.
+        </p>
+    </div>
 </section>
 
 </main>
 
 <footer>
-    <p>
-        © 2026 Samantha Middleton. All rights reserved.
-    </p>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
 </footer>
+
 </body>
 </html>

@@ -433,3 +433,9 @@ footer p {
     border-radius: 14px;
     color: var(--text);
 }
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}

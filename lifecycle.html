@@ -46,15 +46,15 @@
 <main>
 
 <section class="content-panel">
-    <h2>Authorization</h2>
+    <p class="eyebrow">Phase 1: Moving the Data</p>
+    <h2>1. Authorization</h2>
     <p>
-        Authorization begins when a customer taps, inserts, swipes, or enters card information.
-        The request travels from the merchant’s terminal or payment software through the processor/acquirer,
-        card network, and issuing bank.
+        Authorization is a real-time request to verify that the cardholder has sufficient funds or credit.
+        The request travels instantly through the payment chain.
     </p>
 
     <div class="flow-row">
-        <span>Customer</span>
+        <span>Customer / Card</span>
         <span>→</span>
         <span>Terminal / POS</span>
         <span>→</span>
@@ -66,57 +66,66 @@
     </div>
 
     <div class="callout">
-        <strong>Remember:</strong> Authorization success does not mean the merchant has been paid.
-        It only means the issuer approved the transaction.
+        <strong>Crucial Note:</strong> An approval only places a temporary hold on the customer’s funds.
+        It does not mean the merchant has been paid, or that the money has left the customer’s account.
     </div>
 </section>
 
 <section class="content-panel">
-    <h2>Batch</h2>
+    <p class="eyebrow">Phase 1: Moving the Data</p>
+    <h2>2. Capture</h2>
     <p>
-        Approved transactions are grouped together in a batch. Some systems close batches automatically
-        at the end of the day, while others require the merchant to close the batch manually.
+        Capture is the merchant’s official claim on an approved authorization.
+        Without capture, a transaction does not move forward into batching.
+    </p>
+
+    <ul class="lesson-list">
+        <li>In retail or grocery, authorization and capture often happen at the same time.</li>
+        <li>In restaurants, hospitality, or e-commerce, capture may happen later.</li>
+        <li>An uncaptured authorization can expire, causing the merchant to lose the sale.</li>
+    </ul>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Phase 2: Processing the Money</p>
+    <h2>3. Batching</h2>
+    <p>
+        Approved and captured transactions are stored in a batch. At the end of the business day,
+        the merchant closes the batch automatically through software or manually on the terminal.
     </p>
 
     <div class="callout">
-        <strong>Support Tip:</strong> If the batch has not closed, funding may be delayed.
+        <strong>Support Tip:</strong> If a batch is not closed, the funding clock usually does not start.
+        Forgetting to close a manual batch is a common cause of delayed funding calls.
     </div>
 </section>
 
 <section class="content-panel">
-    <h2>Clearing</h2>
+    <p class="eyebrow">Phase 2: Processing the Money</p>
+    <h2>4. Clearing & Settlement</h2>
     <p>
-        Clearing is when finalized transaction details are exchanged between the processor, card network,
-        and issuing bank. This step reconciles the payment promise made during authorization.
+        Once the processor receives the batch, the backend financial exchange begins.
+        Clearing and settlement are closely related behind-the-scenes processes.
     </p>
 
-    <div class="callout">
-        <strong>Think of it this way:</strong> Clearing confirms what happened before funds move.
-    </div>
+    <ul class="lesson-list">
+        <li><strong>Clearing:</strong> Transaction data is exchanged so the parties can reconcile who owes what.</li>
+        <li><strong>Settlement:</strong> Funds move between the issuing side and acquiring side.</li>
+        <li><strong>Fees:</strong> Interchange, assessments, and processor markup reduce the gross amount before the merchant is funded.</li>
+    </ul>
 </section>
 
 <section class="content-panel">
-    <h2>Settlement</h2>
+    <p class="eyebrow">Phase 3: The Finish Line</p>
+    <h2>5. Funding</h2>
     <p>
-        Settlement is when funds move between financial institutions. The issuing bank, card network,
-        processor, and acquiring bank reconcile the transaction and exchange funds.
+        Funding is when the processor or acquiring bank deposits the remaining net funds into the
+        merchant’s business bank account.
     </p>
 
     <div class="callout">
-        <strong>Remember:</strong> Settlement is bank-to-bank. The merchant may still be waiting for funding.
-    </div>
-</section>
-
-<section class="content-panel">
-    <h2>Funding</h2>
-    <p>
-        Funding is when the merchant receives the deposit into their bank account. This usually happens
-        1–2 business days after the transaction, depending on batch timing, weekends, holidays,
-        processor schedules, and account holds.
-    </p>
-
-    <div class="callout">
-        <strong>Remember:</strong> Funding is the finish line for the merchant.
+        <strong>Remember:</strong> Funding usually happens within 1–2 business days after batch close,
+        but weekends, bank holidays, funding schedules, instant funding options, and risk holds can affect timing.
     </div>
 </section>
 
@@ -125,8 +134,9 @@
         <p class="eyebrow">Support Insight</p>
         <h2>Payments do not end at “approved.”</h2>
         <p>
-            They end when the money lands, reconciles, and stays there. This distinction helps support teams
-            troubleshoot funding delays, batch issues, settlement questions, and merchant confusion.
+            They end when the money lands, reconciles, and stays there. Understanding the difference between
+            authorization, capture, batching, clearing, settlement, and funding helps support teams troubleshoot
+            merchant questions with confidence.
         </p>
     </div>
 </section>

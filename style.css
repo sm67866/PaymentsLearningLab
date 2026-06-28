@@ -521,3 +521,71 @@ footer p {
 .payments-table tr:nth-child(even) td {
     background: #f8fafc;
 }
+
+/* ===========================
+   Payments Glossary
+=========================== */
+
+.search-box {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-box:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(217,167,44,.15);
+}
+
+.glossary-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-top: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.glossary-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.glossary-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.glossary-item summary::after {
+    content: "+";
+    font-size: 1.6rem;
+    color: var(--gold);
+    transition: transform .25s ease;
+}
+
+.glossary-item[open] summary::after {
+    content: "−";
+}
+
+.glossary-item p,
+.glossary-item ul {
+    padding: 0 24px;
+}
+
+.glossary-item p:last-child {
+    padding-bottom: 24px;
+}
+
+.glossary-item .callout {
+    margin: 18px 24px;
+}

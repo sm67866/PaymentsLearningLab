@@ -7,46 +7,90 @@ const glossaryItems = document.querySelectorAll(".glossary-item");
 const glossarySections = document.querySelectorAll("main .content-panel");
 
 if (searchBox) {
+
     searchBox.addEventListener("input", function () {
-        const searchTerm = searchBox.value.toLowerCase().trim();
 
-        glossaryItems.forEach(function (item) {
-            const itemText = item.innerText.toLowerCase();
+        const search = searchBox.value.toLowerCase().trim();
 
-            if (itemText.includes(searchTerm)) {
-                item.style.display = "block";
+        let titleMatches = 0;
 
-                if (searchTerm !== "") {
-                    item.open = true;
-                } else {
-                    item.open = false;
-                }
-            } else {
-                item.style.display = "none";
-                item.open = false;
+        // FIRST PASS
+        // Count title matches only
+
+        glossaryItems.forEach(item => {
+
+            const title = item.querySelector("summary").innerText.toLowerCase();
+
+            if (title.includes(search) && search !== "") {
+                titleMatches++;
             }
+
         });
 
-        glossarySections.forEach(function (section) {
-            const itemsInSection = section.querySelectorAll(".glossary-item");
+        // SECOND PASS
+        // Show/hide entries
 
-            if (itemsInSection.length === 0) {
-                return;
+        glossaryItems.forEach(item => {
+
+            const title = item.querySelector("summary").innerText.toLowerCase();
+            const body = item.innerText.toLowerCase();
+
+            let show = false;
+
+            if (search === "") {
+
+                show = true;
+
             }
 
-            let hasVisibleItem = false;
+            else if (titleMatches > 0) {
 
-            itemsInSection.forEach(function (item) {
-                if (item.style.display !== "none") {
-                    hasVisibleItem = true;
-                }
-            });
+                show = title.includes(search);
 
-            if (hasVisibleItem) {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
             }
+
+            else {
+
+                show = body.includes(search);
+
+            }
+
+            item.style.display = show ? "block" : "none";
+            item.open = show && search !== "";
+
         });
+
+        // THIRD PASS
+        // Hide empty letter sections
+
+        glossarySections.forEach(section => {
+
+            const visibleItems = section.querySelectorAll(".glossary-item:not([style*='display: none'])");
+
+            section.style.display =
+                visibleItems.length > 0 ? "block" : "none";
+
+        });
+
+        // FOURTH PASS
+        // Scroll to first visible result
+
+        if (search !== "") {
+
+            const firstVisible =
+                document.querySelector(".glossary-item:not([style*='display: none'])");
+
+            if (firstVisible) {
+
+                firstVisible.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        }
+
     });
+
 }

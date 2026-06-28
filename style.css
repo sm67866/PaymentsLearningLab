@@ -495,3 +495,29 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.payments-table th {
+    background: var(--navy);
+    color: white;
+    text-align: left;
+    padding: 16px;
+}
+
+.payments-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    background: white;
+}
+
+.payments-table tr:nth-child(even) td {
+    background: #f8fafc;
+}

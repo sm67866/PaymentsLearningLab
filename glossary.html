@@ -24,82 +24,417 @@
 </nav>
 
 <header class="lesson-hero">
-
     <div>
-
         <a href="index.html" class="back-link">← Back to Dashboard</a>
-
         <p class="eyebrow">Reference Guide</p>
-
         <h1>Payments Glossary</h1>
-
         <p>
-
-            Definitions, acronyms, and terminology used throughout
-            the Payments Learning Lab.
-
+            Plain-English definitions, acronyms, and support-focused explanations
+            for common payment processing terms.
         </p>
-
     </div>
 
     <div class="hero-visual small-visual">
-
         <div class="visual-card">📖</div>
-
+        <span>→</span>
+        <div class="visual-card">💳</div>
     </div>
-
 </header>
 
 <main>
 
 <section class="content-panel">
-
-<h2>Search</h2>
-
-<input
-type="text"
-placeholder="Search for a payments term..."
-class="search-box">
-
+    <h2>Search</h2>
+    <input type="text" placeholder="Search for a payments term..." class="search-box">
 </section>
 
-  <section class="content-panel">
+<section class="content-panel">
+    <p class="eyebrow">A</p>
 
-<p class="eyebrow">A</p>
+    <details class="glossary-item">
+        <summary>🏦 Acquiring Bank / Acquirer</summary>
+        <p>
+            The merchant-side financial institution, or processor acting on its behalf,
+            that supports card acceptance and helps move funds to the merchant.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Acquirers are involved in merchant accounts, funding, disputes, and processing risk.</div>
+        <p><strong>Related:</strong> Processor • Merchant Account • Settlement • Funding</p>
+    </details>
 
-<details class="glossary-item">
+    <details class="glossary-item">
+        <summary>✅ Authorization</summary>
+        <p>
+            A real-time request asking the issuing bank whether a transaction should be approved or declined.
+        </p>
+        <div class="callout"><strong>Remember:</strong> Authorization does not mean the merchant has been paid.</div>
+        <p><strong>Related:</strong> Capture • Decline Code • Issuer</p>
+    </details>
 
-<summary>
-
-🏦 Acquiring Bank (Acquirer)
-
-</summary>
-
-<p>
-
-The financial institution (or processor acting on its behalf)
-that provides the merchant account and ultimately deposits card
-payments into the merchant's bank account.
-
-</p>
-
-<div class="callout">
-
-<strong>Why It Matters</strong>
-
-When a merchant asks where their money is,
-the acquiring bank is one of the organizations involved.
-
-</div>
-
-<p>
-
-<strong>Related:</strong>
-
-Settlement • Funding • Merchant Account
-
-</p>
-
-</details>
-
+    <details class="glossary-item">
+        <summary>🏠 AVS</summary>
+        <p>
+            Address Verification Service checks the numeric parts of a billing address or ZIP code against the issuing bank’s records.
+        </p>
+        <div class="callout"><strong>You’ll See This When:</strong> A card-not-present transaction is declined or flagged because the billing information does not match.</div>
+        <p><strong>Related:</strong> CVV • Card Not Present • Fraud Settings</p>
+    </details>
 </section>
+
+<section class="content-panel">
+    <p class="eyebrow">B</p>
+
+    <details class="glossary-item">
+        <summary>📦 Batch</summary>
+        <p>
+            A group of approved and captured transactions submitted together for clearing and settlement, usually at the end of the business day.
+        </p>
+        <div class="callout"><strong>You’ll Use This When:</strong> A merchant says they were not funded or their deposit is missing.</div>
+        <p><strong>Related:</strong> Settlement • Funding • Capture</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">C</p>
+
+    <details class="glossary-item">
+        <summary>🧾 Capture</summary>
+        <p>
+            The merchant’s official claim on an approved authorization. Without capture, the transaction does not move forward into the batch.
+        </p>
+        <div class="callout"><strong>Example:</strong> A restaurant may authorize the card first, then capture the final amount after the tip is added.</div>
+        <p><strong>Related:</strong> Authorization • Batch • Settlement</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>💳 Cardholder</summary>
+        <p>
+            The person or business authorized to use a credit or debit card.
+        </p>
+        <p><strong>Related:</strong> Issuer • Card Network • Authorization</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🌐 Card Network / Card Brand</summary>
+        <p>
+            The network that routes transaction data between acquirers and issuers and sets operating rules.
+            Examples include Visa, Mastercard, American Express, and Discover.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Card networks set rules for interchange, disputes, authorization, and settlement.</div>
+        <p><strong>Related:</strong> Issuer • Acquirer • Interchange</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🏪 Card Present</summary>
+        <p>
+            A transaction where the physical card or mobile wallet is presented in person.
+            Examples include tap, dip, and swipe.
+        </p>
+        <p><strong>Related:</strong> EMV • NFC • Terminal</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>💻 Card Not Present</summary>
+        <p>
+            A transaction where the card is not physically presented, such as online, invoice, phone, or subscription payments.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Card-not-present transactions usually carry higher fraud risk and rely more heavily on AVS, CVV, and gateway rules.</div>
+        <p><strong>Related:</strong> AVS • CVV • Gateway • Virtual Terminal</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>⚠️ Chargeback</summary>
+        <p>
+            A formal reversal of a transaction initiated by the cardholder through their issuing bank.
+        </p>
+        <div class="callout"><strong>You’ll See This When:</strong> A customer claims fraud, duplicate billing, missing goods, or dissatisfaction with a purchase.</div>
+        <p><strong>Related:</strong> Dispute • Issuer • Reserve</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🧹 Clearing</summary>
+        <p>
+            The exchange of finalized transaction data between the processor, card network, acquirer, and issuer so everyone can reconcile what is owed.
+        </p>
+        <p><strong>Related:</strong> Settlement • Batch • Interchange</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🔐 CVV / CVC / CID</summary>
+        <p>
+            The 3- or 4-digit security code printed on the card, used to help verify that the customer has the card during card-not-present transactions.
+        </p>
+        <div class="callout"><strong>Critical Rule:</strong> Merchants should never store CVV after authorization.</div>
+        <p><strong>Related:</strong> AVS • PCI DSS • Card Not Present</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">D</p>
+
+    <details class="glossary-item">
+        <summary>🏷️ Descriptor</summary>
+        <p>
+            The business name or billing label that appears on a customer’s card statement.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Confusing descriptors can lead to chargebacks because customers do not recognize the charge.</div>
+        <p><strong>Related:</strong> Chargeback • Merchant Account</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>📉 Downgrade</summary>
+        <p>
+            A transaction that does not qualify for the best interchange rate because it missed required data, timing, or security criteria.
+        </p>
+        <div class="callout"><strong>You’ll See This When:</strong> A merchant asks why processing costs are higher than expected.</div>
+        <p><strong>Related:</strong> Interchange • Batch • Level 2/3 Data</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">E</p>
+
+    <details class="glossary-item">
+        <summary>💳 EMV</summary>
+        <p>
+            Chip-card technology that improves security for in-person card transactions and helps reduce counterfeit fraud.
+        </p>
+        <p><strong>Related:</strong> Terminal • Card Present • NFC</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">F</p>
+
+    <details class="glossary-item">
+        <summary>💰 Funding</summary>
+        <p>
+            The final deposit of settled card payment funds into the merchant’s business bank account.
+        </p>
+        <div class="callout"><strong>Merchant Translation:</strong> This is when the money actually lands.</div>
+        <p><strong>Related:</strong> Batch • Settlement • Reserve</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>⏳ Funding Delay</summary>
+        <p>
+            A delay between processing transactions and the merchant receiving funds.
+            Common causes include weekends, holidays, unclosed batches, risk holds, or processor schedules.
+        </p>
+        <p><strong>Related:</strong> Batch • Funding • Reserve</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">G</p>
+
+    <details class="glossary-item">
+        <summary>🌉 Gateway</summary>
+        <p>
+            The digital equivalent of a payment terminal for e-commerce, virtual terminal, mobile app, or card-not-present payments.
+            It securely captures and transmits transaction data to the processor.
+        </p>
+        <p><strong>Related:</strong> Virtual Terminal • Card Not Present • Processor</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">I</p>
+
+    <details class="glossary-item">
+        <summary>🏛️ Interchange</summary>
+        <p>
+            The wholesale fee paid to the issuing bank for accepting a card transaction. It is usually the largest part of a merchant’s processing cost.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Interchange varies based on card type, industry, transaction method, and data quality.</div>
+        <p><strong>Related:</strong> Downgrade • Card Network • Settlement</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🏦 Issuing Bank / Issuer</summary>
+        <p>
+            The cardholder’s bank. It issues the card and decides whether to approve or decline authorization requests.
+        </p>
+        <div class="callout"><strong>Support Tip:</strong> If the issuer declines a transaction, the processor usually cannot override it.</div>
+        <p><strong>Related:</strong> Authorization • Decline Code • Cardholder</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">M</p>
+
+    <details class="glossary-item">
+        <summary>🏪 Merchant Account</summary>
+        <p>
+            A specialized account used to accept and settle card payment funds before they are deposited into the merchant’s bank account.
+        </p>
+        <p><strong>Related:</strong> Acquirer • MID • Funding</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🆔 MID</summary>
+        <p>
+            Merchant Identification Number. A unique identifier assigned to a merchant account by the acquirer or processor.
+        </p>
+        <div class="callout"><strong>You’ll Use This For:</strong> Merchant lookup, equipment programming, funding research, and chargeback investigation.</div>
+        <p><strong>Related:</strong> TID • Merchant Account • Processor</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">N</p>
+
+    <details class="glossary-item">
+        <summary>📲 NFC</summary>
+        <p>
+            Near Field Communication, the wireless technology used for tap-to-pay cards and mobile wallets.
+        </p>
+        <p><strong>Related:</strong> EMV • Card Present • Terminal</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">P</p>
+
+    <details class="glossary-item">
+        <summary>🔒 P2PE</summary>
+        <p>
+            Point-to-Point Encryption encrypts card data inside the payment terminal immediately when the card is read.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> P2PE helps reduce PCI scope because the merchant’s local network does not handle readable card data.</div>
+        <p><strong>Related:</strong> PCI DSS • Terminal • Tokenization</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🛡️ PCI DSS</summary>
+        <p>
+            Payment Card Industry Data Security Standard. A set of security requirements for protecting cardholder data.
+        </p>
+        <p><strong>Related:</strong> SAQ • P2PE • Tokenization</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🖥️ POS</summary>
+        <p>
+            Point of Sale. The hardware and software used to ring up items, calculate totals, and pass payment amounts to a terminal.
+        </p>
+        <p><strong>Related:</strong> Terminal • TID • Card Present</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>⚙️ Processor</summary>
+        <p>
+            The backend system or company that routes transaction data, supports authorization, manages batching, and helps with clearing and settlement.
+        </p>
+        <div class="callout"><strong>Why It Matters:</strong> Merchants often contact the processor or ISO for funding, terminal, batch, and account support.</div>
+        <p><strong>Related:</strong> Acquirer • Gateway • Settlement</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">R</p>
+
+    <details class="glossary-item">
+        <summary>↩️ Refund</summary>
+        <p>
+            A merchant-initiated return of funds to the customer after a transaction has settled.
+        </p>
+        <p><strong>Related:</strong> Void • Settlement • Chargeback</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🏦 Reserve</summary>
+        <p>
+            Funds held back by a processor as protection against future chargebacks, fraud, or unpaid fees.
+            A reserve may be rolling, capped, or fixed.
+        </p>
+        <p><strong>Related:</strong> Chargeback • Risk Hold • Funding</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">S</p>
+
+    <details class="glossary-item">
+        <summary>📝 SAQ</summary>
+        <p>
+            Self-Assessment Questionnaire. A PCI compliance form many merchants complete annually based on how they accept card payments.
+        </p>
+        <p><strong>Related:</strong> PCI DSS • P2PE • Tokenization</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🏦 Settlement</summary>
+        <p>
+            The movement of funds between financial institutions after transactions are cleared.
+        </p>
+        <div class="callout"><strong>Remember:</strong> Settlement is not the same as merchant funding.</div>
+        <p><strong>Related:</strong> Clearing • Funding • Batch</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">T</p>
+
+    <details class="glossary-item">
+        <summary>📟 Terminal</summary>
+        <p>
+            A physical payment device used to accept card-present payments by tap, dip, or swipe.
+        </p>
+        <p><strong>Related:</strong> POS • TID • EMV</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🔢 TID</summary>
+        <p>
+            Terminal Identification Number. A unique ID assigned to a specific terminal or gateway lane.
+        </p>
+        <div class="callout"><strong>Example:</strong> One merchant can have one MID and many TIDs, such as a grocery store with many checkout lanes.</div>
+        <p><strong>Related:</strong> MID • Terminal • POS</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🔐 Tokenization</summary>
+        <p>
+            The process of replacing sensitive card numbers with a secure placeholder called a token.
+        </p>
+        <div class="callout"><strong>Why Merchants Use It:</strong> Tokenization supports recurring billing and reduces the need to store card data.</div>
+        <p><strong>Related:</strong> PCI DSS • P2PE • Recurring Billing</p>
+    </details>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">V</p>
+
+    <details class="glossary-item">
+        <summary>💻 Virtual Terminal</summary>
+        <p>
+            A secure web-based portal where merchants can manually enter card information for phone, mail, invoice, or card-not-present payments.
+        </p>
+        <p><strong>Related:</strong> Gateway • Card Not Present • AVS</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>🚫 Void</summary>
+        <p>
+            A cancellation of a transaction before it settles. Unlike a refund, a void stops the transaction before money officially moves.
+        </p>
+        <p><strong>Related:</strong> Refund • Settlement • Batch</p>
+    </details>
+
+    <details class="glossary-item">
+        <summary>☎️ Voice Authorization</summary>
+        <p>
+            A manual authorization obtained by calling an authorization center when electronic approval is unavailable or additional verification is required.
+        </p>
+        <p><strong>Related:</strong> Authorization • Decline Code • Issuer</p>
+    </details>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

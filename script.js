@@ -7,90 +7,56 @@ const glossaryItems = document.querySelectorAll(".glossary-item");
 const glossarySections = document.querySelectorAll("main .content-panel");
 
 if (searchBox) {
-
     searchBox.addEventListener("input", function () {
-
         const search = searchBox.value.toLowerCase().trim();
 
         let titleMatches = 0;
 
-        // FIRST PASS
-        // Count title matches only
-
-        glossaryItems.forEach(item => {
-
+        glossaryItems.forEach(function (item) {
             const title = item.querySelector("summary").innerText.toLowerCase();
 
-            if (title.includes(search) && search !== "") {
+            if (search !== "" && title.includes(search)) {
                 titleMatches++;
             }
-
         });
 
-        // SECOND PASS
-        // Show/hide entries
-
-        glossaryItems.forEach(item => {
-
+        glossaryItems.forEach(function (item) {
             const title = item.querySelector("summary").innerText.toLowerCase();
             const body = item.innerText.toLowerCase();
 
-            let show = false;
+            let showItem = true;
 
             if (search === "") {
-
-                show = true;
-
+                showItem = true;
+                item.open = false;
+            } else if (titleMatches > 0) {
+                showItem = title.includes(search);
+                item.open = showItem;
+            } else {
+                showItem = body.includes(search);
+                item.open = showItem;
             }
 
-            else if (titleMatches > 0) {
-
-                show = title.includes(search);
-
-            }
-
-            else {
-
-                show = body.includes(search);
-
-            }
-
-            item.style.display = show ? "block" : "none";
-            item.open = show && search !== "";
-
+            item.style.display = showItem ? "block" : "none";
         });
 
-        // THIRD PASS
-        // Hide empty letter sections
+        glossarySections.forEach(function (section) {
+            const items = section.querySelectorAll(".glossary-item");
 
-        glossarySections.forEach(section => {
-
-            const visibleItems = section.querySelectorAll(".glossary-item:not([style*='display: none'])");
-
-            section.style.display =
-                visibleItems.length > 0 ? "block" : "none";
-
-        });
-
-        // FOURTH PASS
-        // Scroll to first visible result
-
-        if (search !== "") {
-
-            const firstVisible =
-                document.querySelector(".glossary-item:not([style*='display: none'])");
-
-            if (firstVisible) {
-
-                firstVisible.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
+            if (items.length === 0) {
+                section.style.display = "block";
+                return;
             }
 
-        }
+            let hasVisibleItem = false;
 
+            items.forEach(function (item) {
+                if (item.style.display !== "none") {
+                    hasVisibleItem = true;
+                }
+            });
+
+            section.style.display = hasVisibleItem ? "block" : "none";
+        });
     });
-
 }

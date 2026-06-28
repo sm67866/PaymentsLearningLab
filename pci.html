@@ -1,19 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCI Compliance & Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">💳</span>
+        Payments Learning Lab
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html#modules">Modules</a>
+        <a href="#">Diagnostics</a>
+        <a href="#">Glossary</a>
+        <a href="#">About</a>
+    </div>
+</nav>
+
 <header class="lesson-hero">
-
     <div>
-
         <a href="index.html" class="back-link">← Back to Dashboard</a>
-
         <p class="eyebrow">Module 05</p>
-
         <h1>PCI Compliance & Security</h1>
-
         <p>
             Every business that accepts credit cards has a responsibility to protect
             cardholder data. PCI DSS establishes the security standards that help
             merchants safeguard sensitive payment information.
         </p>
-
     </div>
 
     <div class="hero-visual small-visual">
@@ -21,220 +40,154 @@
         <span>→</span>
         <div class="visual-card">💳</div>
     </div>
-
 </header>
 
+<main>
+
 <section class="content-panel">
+    <h2>What is PCI DSS?</h2>
+    <p>
+        The Payment Card Industry Data Security Standard (PCI DSS) is a global set of
+        security standards designed to protect cardholder data.
+    </p>
 
-<h2>What is PCI DSS?</h2>
+    <p>
+        <strong>Important:</strong> PCI DSS is <strong>not a government law.</strong>
+        It is a contractual requirement developed by the PCI Security Standards Council
+        and enforced through the payment ecosystem by card brands, acquiring banks,
+        and payment processors.
+    </p>
 
-<p>
-
-The Payment Card Industry Data Security Standard (PCI DSS) is a global set of
-security standards designed to protect cardholder data.
-
-</p>
-
-<p>
-
-<strong>Important:</strong>
-
-PCI DSS is <strong>not a government law.</strong>
-
-It is a contractual requirement developed by the PCI Security Standards Council
-and enforced through the payment ecosystem by card brands, acquiring banks,
-and payment processors.
-
-</p>
-
-<div class="callout">
-
-<strong>Why It Matters</strong>
-
-Failure to maintain PCI compliance can result in fines, increased processing
-fees, forensic audits after a breach, or even the loss of the ability to accept
-card payments.
-
-</div>
-
+    <div class="callout">
+        <strong>Why It Matters:</strong>
+        Failure to maintain PCI compliance can result in fines, increased processing
+        fees, forensic audits after a breach, or even the loss of the ability to accept
+        card payments.
+    </div>
 </section>
 
 <section class="content-panel">
+    <p class="eyebrow">Merchant Levels</p>
+    <h2>Who Has the Most Requirements?</h2>
 
-<p class="eyebrow">Merchant Levels</p>
+    <table class="payments-table">
+        <tr>
+            <th>Level</th>
+            <th>Annual Volume</th>
+            <th>Typical Requirement</th>
+        </tr>
 
-<h2>Who Has the Most Requirements?</h2>
+        <tr>
+            <td>1</td>
+            <td>Over 6 Million</td>
+            <td>QSA Audit + Report on Compliance</td>
+        </tr>
 
-<table class="payments-table">
+        <tr>
+            <td>2</td>
+            <td>1–6 Million</td>
+            <td>Annual SAQ</td>
+        </tr>
 
-<tr>
-<th>Level</th>
-<th>Annual Volume</th>
-<th>Typical Requirement</th>
-</tr>
+        <tr>
+            <td>3</td>
+            <td>20,000–1 Million E-Commerce</td>
+            <td>Annual SAQ</td>
+        </tr>
 
-<tr>
-<td>1</td>
-<td>Over 6 Million</td>
-<td>QSA Audit + Report on Compliance</td>
-</tr>
+        <tr>
+            <td>4</td>
+            <td>Most Small Businesses</td>
+            <td>Annual SAQ + Possible Quarterly Scans</td>
+        </tr>
+    </table>
 
-<tr>
-<td>2</td>
-<td>1–6 Million</td>
-<td>Annual SAQ</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>20,000–1 Million E-Commerce</td>
-<td>Annual SAQ</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>Most Small Businesses</td>
-<td>Annual SAQ + Possible Quarterly Scans</td>
-</tr>
-
-</table>
-
-<div class="callout">
-
-<strong>Good to Know:</strong>
-
-Card brands may designate a merchant as Level 1 after a significant security
-breach regardless of transaction volume.
-
-</div>
-
+    <div class="callout">
+        <strong>Good to Know:</strong>
+        Card brands may designate a merchant as Level 1 after a significant security
+        breach regardless of transaction volume.
+    </div>
 </section>
 
 <section class="content-panel">
+    <p class="eyebrow">Self Assessment Questionnaires</p>
+    <h2>Choosing the Right SAQ</h2>
 
-<p class="eyebrow">Self Assessment Questionnaires</p>
+    <p>
+        The correct SAQ depends on how a merchant accepts payments—not simply how many
+        payments they process.
+    </p>
 
-<h2>Choosing the Right SAQ</h2>
+    <ul class="lesson-list">
+        <li><strong>SAQ A</strong> – Fully outsourced hosted payment pages.</li>
+        <li><strong>SAQ A-EP</strong> – Merchant hosts the website, but payment data posts directly to the processor.</li>
+        <li><strong>SAQ B-IP</strong> – Standalone IP-connected payment terminals.</li>
+        <li><strong>SAQ D</strong> – Merchants that store, process, or transmit cardholder data directly.</li>
+    </ul>
 
-<p>
-
-The correct SAQ depends on how a merchant accepts payments—not simply how many
-payments they process.
-
-</p>
-
-<ul class="lesson-list">
-
-<li><strong>SAQ A</strong> – Fully outsourced hosted payment pages.</li>
-
-<li><strong>SAQ A-EP</strong> – Merchant hosts the website, but payment data posts directly to the processor.</li>
-
-<li><strong>SAQ B-IP</strong> – Standalone IP-connected payment terminals.</li>
-
-<li><strong>SAQ D</strong> – Merchants that store, process, or transmit cardholder data directly.</li>
-
-</ul>
-
-<div class="callout">
-
-<strong>Support Tip:</strong>
-
-Choosing the wrong SAQ can leave a merchant both non-compliant and unnecessarily burdened with additional requirements.
-
-</div>
-
+    <div class="callout">
+        <strong>Support Tip:</strong>
+        Choosing the wrong SAQ can leave a merchant both non-compliant and unnecessarily burdened with additional requirements.
+    </div>
 </section>
 
 <section class="content-panel">
+    <p class="eyebrow">Implementation Best Practice</p>
+    <h2>Reduce PCI Scope</h2>
 
-<p class="eyebrow">Implementation Best Practice</p>
+    <p>
+        Every implementation should aim to reduce the number of systems that handle
+        cardholder data. Less scope means less liability, simpler PCI requirements,
+        lower security risk, and easier annual compliance.
+    </p>
 
-<h2>Reduce PCI Scope</h2>
+    <h3>Tokenization</h3>
+    <p>
+        Sensitive card numbers are replaced with secure tokens while the processor
+        stores the actual card data in a protected vault.
+    </p>
 
-<p>
-
-Every implementation should aim to reduce the number of systems that handle
-cardholder data.
-
-Less scope means:
-
-</p>
-
-<ul class="lesson-list">
-
-<li>Less liability</li>
-
-<li>Simpler PCI requirements</li>
-
-<li>Lower security risk</li>
-
-<li>Easier annual compliance</li>
-
-</ul>
-
-<h3>Tokenization</h3>
-
-<p>
-
-Sensitive card numbers are replaced with secure tokens while the processor
-stores the actual card data in a protected vault.
-
-</p>
-
-<h3>Point-to-Point Encryption (P2PE)</h3>
-
-<p>
-
-Certified payment terminals encrypt card data immediately after it is read,
-keeping the merchant's local network out of PCI scope.
-
-</p>
-
+    <h3>Point-to-Point Encryption (P2PE)</h3>
+    <p>
+        Certified payment terminals encrypt card data immediately after it is read,
+        keeping the merchant's local network out of PCI scope.
+    </p>
 </section>
 
 <section class="content-panel">
+    <p class="eyebrow">Critical Security Rule</p>
+    <h2>Never Store Sensitive Authentication Data</h2>
 
-<p class="eyebrow">Critical Security Rule</p>
+    <ul class="lesson-list">
+        <li>❌ CVV / CVC codes</li>
+        <li>❌ PIN numbers</li>
+        <li>❌ Full magnetic stripe / track data</li>
+    </ul>
 
-<h2>Never Store Sensitive Authentication Data</h2>
-
-<ul class="lesson-list">
-
-<li>❌ CVV / CVC codes</li>
-
-<li>❌ PIN numbers</li>
-
-<li>❌ Full magnetic stripe (track) data</li>
-
-</ul>
-
-<div class="callout">
-
-<strong>Remember:</strong>
-
-Even if a customer gives permission, merchants cannot retain CVV values after authorization.
-
-</div>
-
+    <div class="callout">
+        <strong>Remember:</strong>
+        Even if a customer gives permission, merchants cannot retain CVV values after authorization.
+    </div>
 </section>
 
 <section class="feature-panel">
+    <div>
+        <p class="eyebrow">Support Insight</p>
+        <h2>PCI Compliant ≠ PCI Certified</h2>
 
-<div>
-
-<p class="eyebrow">Support Insight</p>
-
-<h2>PCI Compliant ≠ PCI Certified</h2>
-
-<p>
-
-A payment gateway or software platform may be built to support PCI compliance,
-but merchants are still responsible for completing their annual SAQ and
-maintaining appropriate security controls.
-
-</p>
-
-</div>
-
+        <p>
+            A payment gateway or software platform may be built to support PCI compliance,
+            but merchants are still responsible for completing their annual SAQ and
+            maintaining appropriate security controls.
+        </p>
+    </div>
 </section>
 
+</main>
+
+<footer>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

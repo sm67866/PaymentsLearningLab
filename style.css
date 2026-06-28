@@ -439,3 +439,59 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
+
+.decline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.decline-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(8, 43, 87, 0.08);
+}
+
+.decline-card .code {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 900;
+    padding: 8px 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+}
+
+.decline-card h3 {
+    margin: 0 0 10px;
+}
+
+.decline-card p {
+    margin: 0 0 12px;
+}
+
+.decline-card.hard {
+    border-top: 6px solid #c0392b;
+}
+
+.decline-card.hard .code {
+    background: #fdecea;
+    color: #922b21;
+}
+
+.decline-card.soft {
+    border-top: 6px solid var(--gold);
+}
+
+.decline-card.soft .code {
+    background: var(--gold-light);
+    color: var(--navy-dark);
+}
+
+@media (max-width: 850px) {
+    .decline-grid {
+        grid-template-columns: 1fr;
+    }
+}

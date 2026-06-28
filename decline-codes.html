@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Decline Codes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">💳</span>
+        Payments Learning Lab
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html#modules">Modules</a>
+        <a href="#">Diagnostics</a>
+        <a href="#">Glossary</a>
+        <a href="#">About</a>
+    </div>
+</nav>
+
+<header class="lesson-hero">
+    <div>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+        <p class="eyebrow">Module 03</p>
+        <h1>Common Decline Codes</h1>
+        <p>
+            When a transaction fails, the issuing bank sends back a response code.
+            Understanding those codes helps merchants know whether to retry, fix entered data,
+            ask for another card, or have the customer call their bank.
+        </p>
+    </div>
+
+    <div class="hero-visual small-visual">
+        <div class="visual-card">❌</div>
+        <span>→</span>
+        <div class="visual-card">💳</div>
+    </div>
+</header>
+
+<main>
+
+<section class="content-panel">
+    <h2>Why decline codes matter</h2>
+    <p>
+        A decline code is more than an error message. It tells the merchant what kind of problem occurred
+        and what the next best action should be.
+    </p>
+
+    <div class="callout">
+        <strong>Support Tip:</strong> Not every decline should be retried. Repeatedly retrying the same card
+        can create fraud concerns and frustrate the customer.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Hard Declines</p>
+    <h2>Do Not Retry</h2>
+    <p>
+        Hard declines are usually permanent for that transaction. The merchant should ask for another
+        payment method or have the customer contact their issuing bank.
+    </p>
+
+    <div class="decline-grid">
+        <div class="decline-card hard">
+            <span class="code">05</span>
+            <h3>Do Not Honor</h3>
+            <p>The issuer declined the transaction without giving a specific reason.</p>
+            <strong>Merchant Action:</strong>
+            <p>Ask for another payment method. The customer must call their bank.</p>
+        </div>
+
+        <div class="decline-card hard">
+            <span class="code">04</span>
+            <h3>Pick Up Card</h3>
+            <p>The card may be lost, stolen, or blocked by the issuer.</p>
+            <strong>Merchant Action:</strong>
+            <p>Do not retry. Follow company policy.</p>
+        </div>
+
+        <div class="decline-card hard">
+            <span class="code">14</span>
+            <h3>Invalid Card Number</h3>
+            <p>The card number does not exist or was entered incorrectly.</p>
+            <strong>Merchant Action:</strong>
+            <p>Verify the card number or ask for another card.</p>
+        </div>
+
+        <div class="decline-card hard">
+            <span class="code">54</span>
+            <h3>Expired Card</h3>
+            <p>The expiration date is expired or was entered incorrectly.</p>
+            <strong>Merchant Action:</strong>
+            <p>Verify the expiration date or use another payment method.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Soft Declines</p>
+    <h2>Usually Fixable</h2>
+    <p>
+        Soft declines are often caused by temporary issues, incorrect information, or issuer/network
+        communication problems.
+    </p>
+
+    <div class="decline-grid">
+        <div class="decline-card soft">
+            <span class="code">51</span>
+            <h3>Insufficient Funds</h3>
+            <p>The account does not have enough available credit or cash.</p>
+            <strong>Merchant Action:</strong>
+            <p>Ask for another card, a lower amount, or for the customer to try later.</p>
+        </div>
+
+        <div class="decline-card soft">
+            <span class="code">N7</span>
+            <h3>CVV Failure</h3>
+            <p>The security code was entered incorrectly or failed validation.</p>
+            <strong>Merchant Action:</strong>
+            <p>Re-enter the CVV carefully or ask for another payment method.</p>
+        </div>
+
+        <div class="decline-card soft">
+            <span class="code">62</span>
+            <h3>Restricted Card</h3>
+            <p>The card may be blocked for this merchant type, region, or transaction category.</p>
+            <strong>Merchant Action:</strong>
+            <p>Ask for a different card or have the customer contact their bank.</p>
+        </div>
+
+        <div class="decline-card soft">
+            <span class="code">91</span>
+            <h3>Issuer Unavailable</h3>
+            <p>A temporary communication issue occurred between systems.</p>
+            <strong>Merchant Action:</strong>
+            <p>Wait a moment and try again.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Card-Not-Present Checks</p>
+    <h2>AVS, CVV, and fraud settings</h2>
+
+    <p>
+        Online, phone, invoice, and keyed transactions often rely on additional security checks because
+        the card is not physically present.
+    </p>
+
+    <ul class="lesson-list">
+        <li><strong>AVS:</strong> Compares the billing address or ZIP code to the issuing bank’s records.</li>
+        <li><strong>CVV:</strong> Verifies the 3- or 4-digit card security code.</li>
+        <li><strong>Gateway Rules:</strong> Some systems decline transactions automatically based on AVS, CVV, velocity, or risk settings.</li>
+    </ul>
+
+    <div class="callout">
+        <strong>Good to Know:</strong> A transaction can receive issuer approval but still be declined by gateway
+        fraud settings.
+    </div>
+</section>
+
+<section class="feature-panel">
+    <div>
+        <p class="eyebrow">Support Insight</p>
+        <h2>“Do Not Honor” cannot be overridden.</h2>
+        <p>
+            If a merchant receives a 05 decline, support agents cannot force the approval.
+            The customer needs to contact the issuing bank or use another payment method.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

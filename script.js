@@ -90,38 +90,42 @@ if (submitQuizButton) {
         let score = 0;
 
         quizQuestions.forEach(function (question) {
-            const correctAnswer = question.dataset.answer;
+            const correctAnswer = question.getAttribute("data-answer");
             const selectedButton = question.querySelector("button.selected");
-            const feedback = question.querySelector(".quiz-feedback");
+            const correctFeedback = question.querySelector(".correct-feedback");
+            const incorrectFeedback = question.querySelector(".incorrect-feedback");
             const buttons = question.querySelectorAll("button");
 
             buttons.forEach(function (button) {
                 button.classList.remove("correct", "incorrect");
 
-                if (button.dataset.choice === correctAnswer) {
+                if (button.getAttribute("data-choice") === correctAnswer) {
                     button.classList.add("correct");
                 }
             });
 
-            if (selectedButton) {
-                if (selectedButton.dataset.choice === correctAnswer) {
-                    score++;
-                } else {
+            correctFeedback.classList.remove("show");
+            incorrectFeedback.classList.remove("show");
+
+            if (selectedButton && selectedButton.getAttribute("data-choice") === correctAnswer) {
+                score++;
+                correctFeedback.classList.add("show");
+            } else {
+                if (selectedButton) {
                     selectedButton.classList.add("incorrect");
                 }
-            
+
+                incorrectFeedback.classList.add("show");
             }
-            feedback.classList.add("show");
         });
 
-        quizResult.innerHTML = `
-            <h3>Score: ${score} / ${quizQuestions.length}</h3>
-            <p>
-                ${score === quizQuestions.length
-                    ? "🎉 Perfect score! You completed Payment Processing 101."
-                    : "Nice work. Review the highlighted answers, then try again when you're ready."}
-            </p>
-        `;
+        quizResult.innerHTML =
+            "<h3>Score: " + score + " / " + quizQuestions.length + "</h3>" +
+            "<p>" +
+            (score === quizQuestions.length
+                ? "🎉 Perfect score! You completed Payment Processing 101."
+                : "Nice work. Review the explanations, then try again when you're ready.") +
+            "</p>";
 
         quizResult.classList.add("show");
     });

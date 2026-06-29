@@ -1,6 +1,8 @@
 console.log("Payments Learning Lab Loaded");
 
-//Search Box//
+/* ===========================
+   Glossary Search
+=========================== */
 
 const searchBox = document.querySelector(".search-box");
 const glossaryItems = document.querySelectorAll(".glossary-item");
@@ -59,4 +61,69 @@ if (searchBox) {
             section.style.display = hasVisibleItem ? "block" : "none";
         });
     });
+}
+
+/* ===========================
+   Quiz
+=========================== */
+
+const quizQuestions = document.querySelectorAll(".quiz-question");
+const submitQuizButton = document.querySelector("#submit-quiz");
+const quizResult = document.querySelector("#quiz-result");
+
+quizQuestions.forEach(function (question) {
+    const buttons = question.querySelectorAll("button");
+
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            buttons.forEach(function (btn) {
+                btn.classList.remove("selected");
+            });
+
+            button.classList.add("selected");
+        });
+    });
+});
+
+if (submitQuizButton) {
+    submitQuizButton.addEventListener("click", function () {
+        let score = 0;
+
+        quizQuestions.forEach(function (question) {
+            const correctAnswer = question.dataset.answer;
+            const selectedButton = question.querySelector("button.selected");
+            const feedback = question.querySelector(".quiz-feedback");
+            const buttons = question.querySelectorAll("button");
+
+            buttons.forEach(function (button) {
+                button.classList.remove("correct", "incorrect");
+
+                if (button.dataset.choice === correctAnswer) {
+                    button.classList.add("correct");
+                }
+            });
+
+            if (selectedButton) {
+                if (selectedButton.dataset.choice === correctAnswer) {
+                    score++;
+                } else {
+                    selectedButton.classList.add("incorrect");
+                }
+            }
+
+            feedback.classList.add("show");
+        });
+
+        quizResult.innerHTML = `
+            <h3>Score: ${score} / ${quizQuestions.length}</h3>
+            <p>
+                ${score === quizQuestions.length
+                    ? "🎉 Perfect score! You completed Payment Processing 101."
+                    : "Nice work. Review the highlighted answers, then try again when you're ready."}
+            </p>
+        `;
+
+        quizResult.classList.add("show");
+    });
+}
 }

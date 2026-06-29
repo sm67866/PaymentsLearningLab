@@ -107,13 +107,15 @@ if (submitQuizButton) {
             correctFeedback.classList.remove("show");
             incorrectFeedback.classList.remove("show");
 
-            if (selectedButton && selectedButton.getAttribute("data-choice") === correctAnswer) {
-                score++;
-                correctFeedback.classList.add("show");
-            } else {
-                if (selectedButton) {
-                    selectedButton.classList.add("incorrect");
-                }
+           if (!selectedButton) {
+    incorrectFeedback.classList.add("show");
+} else if (selectedButton.getAttribute("data-choice") === correctAnswer) {
+    score++;
+    correctFeedback.classList.add("show");
+} else {
+    selectedButton.classList.add("incorrect");
+    incorrectFeedback.classList.add("show");
+}
 
                 incorrectFeedback.classList.add("show");
             }

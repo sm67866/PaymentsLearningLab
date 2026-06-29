@@ -188,7 +188,9 @@
         <button data-choice="b">Card Network</button>
         <button data-choice="c">Issuing Bank</button>
         <button data-choice="d">Processor</button>
-        <p class="quiz-feedback">Correct: The issuing bank owns the customer account and decides whether to approve or decline.</p>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! The issuing bank owns the customer account and makes the final approval decision.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Terminals, processors, and card networks help move the request, but the issuing bank decides whether to approve or decline.</p>
     </div>
 
     <div class="quiz-question" data-answer="b">
@@ -197,14 +199,18 @@
         <button data-choice="b">Card Network</button>
         <button data-choice="c">Gateway</button>
         <button data-choice="d">Terminal</button>
-        <p class="quiz-feedback">Correct: Card networks route transaction data and set operating rules.</p>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Card networks route transaction data between processors/acquirers and issuing banks.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. The card network is the “highway” that routes transaction data between the processor/acquirer side and the issuing bank.</p>
     </div>
 
     <div class="quiz-question" data-answer="b">
         <h3>3. True or False: “Approved” means the merchant has already been funded.</h3>
         <button data-choice="a">True</button>
         <button data-choice="b">False</button>
-        <p class="quiz-feedback">Correct: Approval only means authorization occurred. Funding happens later.</p>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Approval only means authorization occurred. Funding happens later.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Incorrect. “Approved” does not mean paid. The merchant is funded after capture, batching, clearing, settlement, and funding.</p>
     </div>
 
     <div class="quiz-question" data-answer="c">
@@ -213,7 +219,9 @@
         <button data-choice="b">Cardholder</button>
         <button data-choice="c">Terminal / POS connection</button>
         <button data-choice="d">Card Network</button>
-        <p class="quiz-feedback">Correct: A connection error usually begins at the terminal, POS, network, or local setup.</p>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! A connection error usually starts with the terminal, POS, internet, network, or local setup.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Start with the terminal/POS connection first because the transaction may not even be reaching the processor yet.</p>
     </div>
 
     <div class="quiz-question" data-answer="a">
@@ -222,14 +230,15 @@
         <button data-choice="b">Issuing Bank</button>
         <button data-choice="c">Customer</button>
         <button data-choice="d">Cardholder</button>
-        <p class="quiz-feedback">Correct: The acquiring side receives settled funds before merchant funding occurs.</p>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! The acquiring side receives settled funds before merchant funding occurs.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. The acquiring bank is on the merchant side and receives settled funds before the merchant receives their deposit.</p>
     </div>
 
     <button id="submit-quiz" class="primary-button">Submit Quiz</button>
 
     <div id="quiz-result" class="quiz-result"></div>
 </section>
-
 <section class="feature-panel">
     <div>
         <p class="eyebrow">Module Complete</p>

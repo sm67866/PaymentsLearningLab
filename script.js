@@ -126,4 +126,4 @@ if (submitQuizButton) {
         quizResult.classList.add("show");
     });
 }
-}
+

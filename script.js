@@ -109,7 +109,7 @@ if (submitQuizButton) {
                 } else {
                     selectedButton.classList.add("incorrect");
                 }
-            }
+            
 
             feedback.classList.add("show");
         });

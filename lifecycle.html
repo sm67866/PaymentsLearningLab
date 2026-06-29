@@ -17,8 +17,8 @@
 
     <div class="nav-links">
         <a href="index.html#modules">Modules</a>
-        <a href="#">Diagnostics</a>
         <a href="glossary.html">Glossary</a>
+        <a href="#">Diagnostics</a>
         <a href="#">About</a>
     </div>
 </nav>
@@ -29,45 +29,46 @@
         <p class="eyebrow">Module 02</p>
         <h1>Transaction Lifecycle</h1>
         <p>
-            Every card payment looks simple on the surface: tap, swipe, approved.
-            Behind that moment is a full lifecycle that determines whether the merchant actually gets paid.
+            Follow a card payment from authorization to merchant funding, and learn how to diagnose
+            common questions about missing deposits, batch timing, and settlement delays.
         </p>
     </div>
 
     <div class="hero-visual small-visual">
         <div class="visual-card">💳</div>
         <span>→</span>
-        <div class="visual-card">📟</div>
+        <div class="visual-card">🔄</div>
         <span>→</span>
-        <div class="visual-card">🏦</div>
+        <div class="visual-card">💰</div>
     </div>
 </header>
 
 <main>
 
 <section class="content-panel">
+    <p class="eyebrow">Learning Objectives</p>
+    <h2>By the end of this module, you should be able to...</h2>
+    <ul class="lesson-list">
+        <li>Explain the difference between authorization and capture.</li>
+        <li>Understand how batching starts the funding process.</li>
+        <li>Describe the difference between clearing, settlement, and funding.</li>
+        <li>Explain processor cutoff times and funding schedules.</li>
+        <li>Diagnose common merchant funding questions.</li>
+    </ul>
+</section>
+
+<section class="content-panel">
     <p class="eyebrow">Phase 1: Moving the Data</p>
     <h2>1. Authorization</h2>
     <p>
-        Authorization is a real-time request to verify that the cardholder has sufficient funds or credit.
-        The request travels instantly through the payment chain.
+        Authorization is the real-time request asking the issuing bank whether a transaction
+        should be approved or declined. It verifies that the card is valid and that the customer
+        has available funds or credit.
     </p>
 
-    <div class="flow-row">
-        <span>Customer / Card</span>
-        <span>→</span>
-        <span>Terminal / POS</span>
-        <span>→</span>
-        <span>Processor / Acquirer</span>
-        <span>→</span>
-        <span>Card Network</span>
-        <span>→</span>
-        <span>Issuing Bank</span>
-    </div>
-
     <div class="callout">
-        <strong>Crucial Note:</strong> An approval only places a temporary hold on the customer’s funds.
-        It does not mean the merchant has been paid, or that the money has left the customer’s account.
+        <strong>Remember:</strong> Authorization does not mean the merchant has been paid.
+        It only places a temporary hold on the customer’s funds.
     </div>
 </section>
 
@@ -75,70 +76,237 @@
     <p class="eyebrow">Phase 1: Moving the Data</p>
     <h2>2. Capture</h2>
     <p>
-        Capture is the merchant’s official claim on an approved authorization.
-        Without capture, a transaction does not move forward into batching.
+        Capture is the merchant’s official claim on an approved authorization. Without capture,
+        a transaction cannot move forward into batching, clearing, settlement, or funding.
     </p>
 
     <ul class="lesson-list">
-        <li>In retail or grocery, authorization and capture often happen at the same time.</li>
-        <li>In restaurants, hospitality, or e-commerce, capture may happen later.</li>
-        <li>An uncaptured authorization can expire, causing the merchant to lose the sale.</li>
+        <li>Retail transactions often authorize and capture at the same time.</li>
+        <li>Restaurants, hospitality, and e-commerce may capture later.</li>
+        <li>If an authorization expires before capture, the merchant may need to re-run the card.</li>
     </ul>
 </section>
 
 <section class="content-panel">
-    <p class="eyebrow">Phase 2: Processing the Money</p>
+    <p class="eyebrow">Phase 2: End of Day Processing</p>
     <h2>3. Batching</h2>
     <p>
-        Approved and captured transactions are stored in a batch. At the end of the business day,
-        the merchant closes the batch automatically through software or manually on the terminal.
+        Approved and captured transactions are grouped into a batch. Most merchants close batches
+        automatically at the end of the day, but some merchants manually close their batch from the
+        terminal, POS, or gateway.
     </p>
 
     <div class="callout">
         <strong>Support Tip:</strong> If a batch is not closed, the funding clock usually does not start.
-        Forgetting to close a manual batch is a common cause of delayed funding calls.
     </div>
 </section>
 
 <section class="content-panel">
-    <p class="eyebrow">Phase 2: Processing the Money</p>
-    <h2>4. Clearing & Settlement</h2>
+    <p class="eyebrow">The Clock</p>
+    <h2>Processor Cutoff Times</h2>
     <p>
-        Once the processor receives the batch, the backend financial exchange begins.
-        Clearing and settlement are closely related behind-the-scenes processes.
-    </p>
-
-    <ul class="lesson-list">
-        <li><strong>Clearing:</strong> Transaction data is exchanged so the parties can reconcile who owes what.</li>
-        <li><strong>Settlement:</strong> Funds move between the issuing side and acquiring side.</li>
-        <li><strong>Fees:</strong> Interchange, assessments, and processor markup reduce the gross amount before the merchant is funded.</li>
-    </ul>
-</section>
-
-<section class="content-panel">
-    <p class="eyebrow">Phase 3: The Finish Line</p>
-    <h2>5. Funding</h2>
-    <p>
-        Funding is when the processor or acquiring bank deposits the remaining net funds into the
-        merchant’s business bank account.
+        Every processor has a daily cutoff time that determines when captured transactions enter
+        the nightly processing cycle. Transactions batched after the cutoff typically roll into the
+        next business day’s processing window.
     </p>
 
     <div class="callout">
-        <strong>Remember:</strong> Funding usually happens within 1–2 business days after batch close,
-        but weekends, bank holidays, funding schedules, instant funding options, and risk holds can affect timing.
+        <strong>Support Tip:</strong> Missing the cutoff by even a few minutes can delay the merchant’s
+        next funding cycle.
     </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Funding Schedules</p>
+    <h2>Not every merchant is funded the same way</h2>
+    <ul class="lesson-list">
+        <li><strong>Next Day Funding (NDF):</strong> Funds are typically deposited on the next eligible business day after batch processing.</li>
+        <li><strong>Same Day Funding:</strong> Some processors offer accelerated funding for qualifying merchants, often for an additional fee.</li>
+        <li><strong>Standard Funding:</strong> Funding may take two or more business days depending on the processor, risk profile, bank, weekends, or holidays.</li>
+    </ul>
+
+    <div class="callout">
+        <strong>Important:</strong> Funding speed depends on the merchant’s funding program and processor setup,
+        not simply on whether the transaction was approved.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Phase 3: Backend Processing</p>
+    <h2>4. Clearing & Settlement</h2>
+    <p>
+        Clearing and settlement usually happen behind the scenes after the batch is submitted.
+        They are closely related, but they are not the same thing.
+    </p>
+
+    <ul class="lesson-list">
+        <li><strong>Clearing:</strong> Transaction data is exchanged and reconciled between financial institutions.</li>
+        <li><strong>Settlement:</strong> Actual funds move from the issuing side to the acquiring side.</li>
+        <li><strong>Fees:</strong> Interchange, assessments, and processor markup may reduce the amount deposited to the merchant.</li>
+    </ul>
+
+    <div class="callout">
+        <strong>Remember:</strong> Clearing moves information. Settlement moves money.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Funding Math</p>
+    <h2>Gross vs. Net Funding</h2>
+
+    <h3>Net Funding</h3>
+    <p>
+        The processor deducts processing fees before depositing funds into the merchant’s bank account.
+    </p>
+
+    <div class="callout">
+        <strong>Example:</strong> A $5,000 batch may result in a $4,875 deposit if fees are deducted daily.
+    </div>
+
+    <h3>Gross Funding</h3>
+    <p>
+        The merchant receives the full batch amount daily, and processing fees are drafted separately,
+        often once per month.
+    </p>
+
+    <div class="callout">
+        <strong>Support Tip:</strong> When a merchant asks why their deposit is smaller than their sales total,
+        first verify whether they are on Net Funding or Gross Funding.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Phase 4: The Finish Line</p>
+    <h2>5. Funding</h2>
+    <p>
+        Funding is when the merchant finally receives the deposit into their business bank account.
+        This is the stage merchants usually care about most.
+    </p>
+
+    <div class="callout">
+        <strong>Remember:</strong> Settlement is bank-to-bank. Funding is when the merchant actually sees the money.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Support Tool</p>
+    <h2>Where is the money?</h2>
+
+    <table class="payments-table">
+        <tr>
+            <th>Status</th>
+            <th>Where is the money?</th>
+            <th>What should support explain?</th>
+        </tr>
+        <tr>
+            <td>Authorized Only</td>
+            <td>Temporary hold at the issuing bank</td>
+            <td>The transaction still needs to be captured before it can move forward.</td>
+        </tr>
+        <tr>
+            <td>Captured / Batched</td>
+            <td>Processor queue</td>
+            <td>The batch is closed and waiting for the nightly processing window.</td>
+        </tr>
+        <tr>
+            <td>Settled</td>
+            <td>Moving bank-to-bank</td>
+            <td>The funds are in transit and should follow the merchant’s funding schedule.</td>
+        </tr>
+        <tr>
+            <td>Funded</td>
+            <td>Merchant bank account</td>
+            <td>The deposit has landed. Reconcile against reporting and fees.</td>
+        </tr>
+    </table>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Common Misconceptions</p>
+    <h2>What new reps often get wrong</h2>
+
+    <ul class="lesson-list">
+        <li><strong>❌ Authorization means the merchant got paid.</strong><br>✅ No. Authorization only reserves funds.</li>
+        <li><strong>❌ Settlement and funding are the same thing.</strong><br>✅ No. Settlement moves money between banks. Funding deposits money to the merchant.</li>
+        <li><strong>❌ Closing a batch instantly creates funding.</strong><br>✅ No. Funding depends on cutoff times, funding schedules, weekends, holidays, and risk holds.</li>
+        <li><strong>❌ Every merchant has Next Day Funding.</strong><br>✅ No. Funding programs vary by processor, risk, underwriting, and merchant setup.</li>
+    </ul>
+</section>
+
+<section class="content-panel quiz-section">
+    <p class="eyebrow">Support Desk Simulations</p>
+    <h2>Diagnose the merchant issue</h2>
+
+    <div class="quiz-question" data-answer="d">
+        <h3>1. A restaurant merchant’s reports match their receipts, but they have not received deposits for three days. The gateway shows hundreds of transactions in “Authorized” status. What is the most likely cause?</h3>
+        <button data-choice="a">The merchant’s bank account has a risk hold.</button>
+        <button data-choice="b">The card networks are experiencing a clearing delay.</button>
+        <button data-choice="c">The transactions were hard declined by the issuing banks.</button>
+        <button data-choice="d">The transactions were not captured and batched.</button>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Authorized transactions must be captured and batched before they can move to clearing, settlement, and funding.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Since the transactions are still Authorized, they have not moved forward into capture and batching yet.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="d">
+        <h3>2. An online merchant processed $5,000 in sales, but only $4,875 landed in their bank account. What is the most likely explanation?</h3>
+        <button data-choice="a">The terminal failed to capture the remaining balance.</button>
+        <button data-choice="b">The merchant is on Gross Funding and the processor made an error.</button>
+        <button data-choice="c">The issuing bank placed a rolling reserve hold on that batch.</button>
+        <button data-choice="d">The merchant is on Net Funding and fees were deducted before deposit.</button>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! With Net Funding, processing fees are deducted before the daily deposit is sent.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. A deposit slightly lower than the sales total is commonly explained by Net Funding.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="d">
+        <h3>3. A retail merchant closes their batch Friday at 11:30 PM, 30 minutes after an 11:00 PM cutoff. They are on Next Day Funding. When should they most likely expect the deposit?</h3>
+        <button data-choice="a">Saturday morning</button>
+        <button data-choice="b">Wednesday morning</button>
+        <button data-choice="c">Monday morning</button>
+        <button data-choice="d">Tuesday morning</button>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Missing Friday’s cutoff pushes processing to the next eligible business day, making Tuesday the likely NDF deposit day.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Because the merchant missed Friday’s cutoff, the funding clock does not start until the next eligible processing window.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="b">
+        <h3>4. During which phase does actual liquidity move bank-to-bank from the customer’s issuing bank to the merchant’s acquiring bank?</h3>
+        <button data-choice="a">Capture</button>
+        <button data-choice="b">Settlement</button>
+        <button data-choice="c">Clearing</button>
+        <button data-choice="d">Authorization</button>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Settlement is when funds move between financial institutions.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Clearing moves transaction data. Settlement moves the money.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="b">
+        <h3>5. An e-commerce merchant tries to capture an authorization from 10 days ago, but the system will not allow it. What should support explain?</h3>
+        <button data-choice="a">The processor automatically settled the transaction without clearing it.</button>
+        <button data-choice="b">The authorization expired, and the merchant needs a new authorization.</button>
+        <button data-choice="c">The cardholder filed a chargeback, which locked the authorization.</button>
+        <button data-choice="d">The merchant’s daily batch limit was exceeded.</button>
+
+        <p class="quiz-feedback correct-feedback">✅ Correct! Authorizations only hold funds for a limited time. Once expired, the merchant must obtain a new authorization.</p>
+        <p class="quiz-feedback incorrect-feedback">❌ Not quite. If an authorization expires before capture, the hold drops and the merchant cannot claim those funds without a new authorization.</p>
+    </div>
+
+    <button id="submit-quiz" class="primary-button">Submit Simulations</button>
+    <div id="quiz-result" class="quiz-result"></div>
 </section>
 
 <section class="feature-panel">
     <div>
-        <p class="eyebrow">Support Insight</p>
-        <h2>Payments do not end at “approved.”</h2>
+        <p class="eyebrow">Module Complete</p>
+        <h2>You should now be able to...</h2>
         <p>
-            They end when the money lands, reconciles, and stays there. Understanding the difference between
-            authorization, capture, batching, clearing, settlement, and funding helps support teams troubleshoot
-            merchant questions with confidence.
+            Explain the transaction lifecycle, diagnose funding delays, understand batching,
+            distinguish settlement from funding, and recognize common merchant funding issues.
         </p>
     </div>
+
+    <a href="decline-codes.html" class="secondary-button">Next Module →</a>
 </section>
 
 </main>
@@ -146,6 +314,8 @@
 <footer>
     <p>© 2026 Samantha Middleton. All rights reserved.</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

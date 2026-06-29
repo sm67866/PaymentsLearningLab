@@ -651,3 +651,11 @@ footer p {
 .quiz-result.show {
     display: block;
 }
+/* FORCE QUIZ FEEDBACK TO HIDE UNTIL SUBMIT */
+.quiz-section .quiz-feedback {
+    display: none !important;
+}
+
+.quiz-section .quiz-feedback.show {
+    display: block !important;
+}

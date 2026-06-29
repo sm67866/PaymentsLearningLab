@@ -589,3 +589,236 @@ footer p {
 .glossary-item .callout {
     margin: 18px 24px;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing 101</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">💳</span>
+        Payments Learning Lab
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html#modules">Modules</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="#">Diagnostics</a>
+        <a href="#">About</a>
+    </div>
+</nav>
+
+<header class="lesson-hero">
+    <div>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+        <p class="eyebrow">Module 01</p>
+        <h1>Payment Processing 101</h1>
+        <p>
+            Learn the key players involved in a card transaction and how payment data moves
+            from customer to issuing bank.
+        </p>
+    </div>
+
+    <div class="hero-visual small-visual">
+        <div class="visual-card">💳</div>
+        <span>→</span>
+        <div class="visual-card">📟</div>
+        <span>→</span>
+        <div class="visual-card">🏦</div>
+    </div>
+</header>
+
+<main>
+
+<section class="content-panel">
+    <h2>Why this matters</h2>
+    <p>
+        Every payment transaction—whether it succeeds or fails—follows the same basic process.
+        When merchants call with questions about declines, funding delays, connection errors,
+        or chargebacks, understanding the payment ecosystem makes troubleshooting dramatically easier.
+    </p>
+</section>
+
+<section>
+    <div class="section-heading">
+        <p class="eyebrow">Key Concepts</p>
+        <h2>Meet the Players</h2>
+    </div>
+
+    <div class="module-grid">
+        <div class="card">
+            <div class="card-icon">👤</div>
+            <h3>Cardholder</h3>
+            <p>The person or business making a purchase using a credit or debit card.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏪</div>
+            <h3>Merchant</h3>
+            <p>The business accepting the card payment.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📟</div>
+            <h3>Terminal / POS</h3>
+            <p>The hardware or software used to capture payment information.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Gateway</h3>
+            <p>Used for online, virtual terminal, and other card-not-present payments.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Processor</h3>
+            <p>Routes transaction data between merchants, networks, and financial institutions.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏦</div>
+            <h3>Acquiring Bank</h3>
+            <p>The merchant-side bank that helps receive settled funds.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌎</div>
+            <h3>Card Network</h3>
+            <p>Visa, Mastercard, Discover, and American Express route data and set operating rules.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>Issuing Bank</h3>
+            <p>The customer’s bank. It approves or declines the authorization request.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content-panel">
+    <h2>Simple Transaction Flow</h2>
+
+    <div class="flow-row">
+        <span>Customer</span>
+        <span>→</span>
+        <span>Terminal / POS</span>
+        <span>→</span>
+        <span>Processor</span>
+        <span>→</span>
+        <span>Card Network</span>
+        <span>→</span>
+        <span>Issuing Bank</span>
+    </div>
+
+    <div class="callout">
+        <strong>Remember:</strong> Authorization does not mean the merchant has been paid.
+        Approval only means the issuing bank authorized the transaction. The money moves later
+        through batching, clearing, settlement, and funding.
+    </div>
+</section>
+
+<section class="content-panel">
+    <p class="eyebrow">Common Misconceptions</p>
+    <h2>What new reps often get wrong</h2>
+
+    <ul class="lesson-list">
+        <li><strong>❌ Visa approves transactions.</strong><br>✅ No. Card networks route information. The issuing bank approves or declines.</li>
+        <li><strong>❌ Approved means paid.</strong><br>✅ No. Approval only means the transaction was authorized.</li>
+        <li><strong>❌ Every payment uses a gateway.</strong><br>✅ No. Gateways are primarily used for online, virtual terminal, and integrated software payments.</li>
+        <li><strong>❌ The processor owns the customer’s money.</strong><br>✅ No. The issuing bank controls the customer’s account.</li>
+    </ul>
+</section>
+
+<section class="feature-panel">
+    <div>
+        <p class="eyebrow">Support Tip</p>
+        <h2>Merchant says: “It approved, but I don’t have my money.”</h2>
+        <p>
+            Your first thought should be the transaction lifecycle. Has the batch closed?
+            When was the transaction processed? Is funding scheduled? Is today a banking holiday?
+        </p>
+    </div>
+</section>
+
+<section class="content-panel quiz-section">
+    <p class="eyebrow">Knowledge Check</p>
+    <h2>Payment Processing 101 Quiz</h2>
+
+    <div class="quiz-question" data-answer="c">
+        <h3>1. Who ultimately decides whether a transaction is approved or declined?</h3>
+        <button data-choice="a">Payment Terminal</button>
+        <button data-choice="b">Card Network</button>
+        <button data-choice="c">Issuing Bank</button>
+        <button data-choice="d">Processor</button>
+        <p class="quiz-feedback">Correct: The issuing bank owns the customer account and decides whether to approve or decline.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="b">
+        <h3>2. Which player acts as the central highway between the processor and issuing bank?</h3>
+        <button data-choice="a">Merchant</button>
+        <button data-choice="b">Card Network</button>
+        <button data-choice="c">Gateway</button>
+        <button data-choice="d">Terminal</button>
+        <p class="quiz-feedback">Correct: Card networks route transaction data and set operating rules.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="b">
+        <h3>3. True or False: “Approved” means the merchant has already been funded.</h3>
+        <button data-choice="a">True</button>
+        <button data-choice="b">False</button>
+        <p class="quiz-feedback">Correct: Approval only means authorization occurred. Funding happens later.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="c">
+        <h3>4. A terminal says “Connection Error.” What should support investigate first?</h3>
+        <button data-choice="a">Issuing Bank</button>
+        <button data-choice="b">Cardholder</button>
+        <button data-choice="c">Terminal / POS connection</button>
+        <button data-choice="d">Card Network</button>
+        <p class="quiz-feedback">Correct: A connection error usually begins at the terminal, POS, network, or local setup.</p>
+    </div>
+
+    <div class="quiz-question" data-answer="a">
+        <h3>5. Which player ultimately receives settled funds before the merchant is funded?</h3>
+        <button data-choice="a">Acquiring Bank</button>
+        <button data-choice="b">Issuing Bank</button>
+        <button data-choice="c">Customer</button>
+        <button data-choice="d">Cardholder</button>
+        <p class="quiz-feedback">Correct: The acquiring side receives settled funds before merchant funding occurs.</p>
+    </div>
+
+    <button id="submit-quiz" class="primary-button">Submit Quiz</button>
+
+    <div id="quiz-result" class="quiz-result"></div>
+</section>
+
+<section class="feature-panel">
+    <div>
+        <p class="eyebrow">Module Complete</p>
+        <h2>You should now be able to...</h2>
+        <p>
+            Identify the major payment players, explain basic authorization flow,
+            understand who approves transactions, and recognize why “approved” does not mean “funded.”
+        </p>
+    </div>
+
+    <a href="lifecycle.html" class="secondary-button">Next Module →</a>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Samantha Middleton. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,17 +1,19 @@
 console.log("Payments Learning Lab Loaded");
 
+console.log("Payments Learning Lab Loaded");
+
 /* ===========================
    Glossary Search
 =========================== */
 
 const searchBox = document.querySelector(".search-box");
-const glossaryItems = document.querySelectorAll(".glossary-item");
-const glossarySections = document.querySelectorAll("main .content-panel");
 
 if (searchBox) {
+    const glossaryItems = document.querySelectorAll(".glossary-item");
+    const glossarySections = document.querySelectorAll("main .content-panel");
+
     searchBox.addEventListener("input", function () {
         const search = searchBox.value.toLowerCase().trim();
-
         let titleMatches = 0;
 
         glossaryItems.forEach(function (item) {
@@ -25,7 +27,6 @@ if (searchBox) {
         glossaryItems.forEach(function (item) {
             const title = item.querySelector("summary").innerText.toLowerCase();
             const body = item.innerText.toLowerCase();
-
             let showItem = true;
 
             if (search === "") {
@@ -64,7 +65,7 @@ if (searchBox) {
 }
 
 /* ===========================
-   Quiz
+   Quiz / Support Simulations
 =========================== */
 
 const quizQuestions = document.querySelectorAll(".quiz-question");
@@ -104,32 +105,42 @@ if (submitQuizButton) {
                 }
             });
 
-            correctFeedback.classList.remove("show");
-            incorrectFeedback.classList.remove("show");
+            if (correctFeedback) {
+                correctFeedback.classList.remove("show");
+            }
 
-           if (!selectedButton) {
-    incorrectFeedback.classList.add("show");
-} else if (selectedButton.getAttribute("data-choice") === correctAnswer) {
-    score++;
-    correctFeedback.classList.add("show");
-} else {
-    selectedButton.classList.add("incorrect");
-    incorrectFeedback.classList.add("show");
-}
+            if (incorrectFeedback) {
+                incorrectFeedback.classList.remove("show");
+            }
 
-                incorrectFeedback.classList.add("show");
+            if (selectedButton && selectedButton.getAttribute("data-choice") === correctAnswer) {
+                score++;
+
+                if (correctFeedback) {
+                    correctFeedback.classList.add("show");
+                }
+            } else {
+                if (selectedButton) {
+                    selectedButton.classList.add("incorrect");
+                }
+
+                if (incorrectFeedback) {
+                    incorrectFeedback.classList.add("show");
+                }
             }
         });
 
-        quizResult.innerHTML =
-            "<h3>Score: " + score + " / " + quizQuestions.length + "</h3>" +
-            "<p>" +
-            (score === quizQuestions.length
-                ? "🎉 Perfect score! You completed Payment Processing 101."
-                : "Nice work. Review the explanations, then try again when you're ready.") +
-            "</p>";
+        if (quizResult) {
+            quizResult.innerHTML =
+                "<h3>Score: " + score + " / " + quizQuestions.length + "</h3>" +
+                "<p>" +
+                (score === quizQuestions.length
+                    ? "🎉 Perfect score! You completed this module."
+                    : "Nice work. Review the explanations, then try again when you're ready.") +
+                "</p>";
 
-        quizResult.classList.add("show");
+            quizResult.classList.add("show");
+        }
     });
 }
 

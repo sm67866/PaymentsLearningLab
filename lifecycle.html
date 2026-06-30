@@ -259,17 +259,22 @@
         <p class="quiz-feedback incorrect-feedback">❌ Not quite. A deposit slightly lower than the sales total is commonly explained by Net Funding.</p>
     </div>
 
-    <div class="quiz-question" data-answer="d">
-        <h3>3. A retail merchant closes their batch Friday at 11:30 PM, 30 minutes after an 11:00 PM cutoff. They are on Next Day Funding. When should they most likely expect the deposit?</h3>
-        <button data-choice="a">Saturday morning</button>
-        <button data-choice="b">Wednesday morning</button>
-        <button data-choice="c">Monday morning</button>
-        <button data-choice="d">Tuesday morning</button>
+   <div class="quiz-question" data-answer="c">
+    <h3>3. A retail merchant closes their batch at 11:30 PM, which is 30 minutes after their processor's daily cutoff time. The merchant calls the next morning asking why their funding appears delayed. What is the most likely explanation?</h3>
 
-        <p class="quiz-feedback correct-feedback">✅ Correct! Missing Friday’s cutoff pushes processing to the next eligible business day, making Tuesday the likely NDF deposit day.</p>
-        <p class="quiz-feedback incorrect-feedback">❌ Not quite. Because the merchant missed Friday’s cutoff, the funding clock does not start until the next eligible processing window.</p>
-    </div>
+    <button data-choice="a">The issuing bank automatically declined the batch.</button>
+    <button data-choice="b">The processor canceled the batch because it was submitted too late.</button>
+    <button data-choice="c">The batch missed the processor's daily cutoff and rolled into the next processing window.</button>
+    <button data-choice="d">Settlement cannot occur until the merchant manually reauthorizes every transaction.</button>
 
+    <p class="quiz-feedback correct-feedback">
+        ✅ Correct! Missing the processor's cutoff does not usually cancel the batch. It delays when processing begins.
+    </p>
+
+    <p class="quiz-feedback incorrect-feedback">
+        ❌ Not quite. Missing the cutoff usually means the batch rolls into the next processing window. The exact funding date depends on the merchant's funding program, weekends, holidays, processor policies, and bank posting times.
+    </p>
+</div>
     <div class="quiz-question" data-answer="b">
         <h3>4. During which phase does actual liquidity move bank-to-bank from the customer’s issuing bank to the merchant’s acquiring bank?</h3>
         <button data-choice="a">Capture</button>
